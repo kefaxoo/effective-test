@@ -10,33 +10,32 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            TicketsView()
-                .tabItem {
-                    Image(systemName: "airplane")
-                    Text("Авиабилеты")
-                }
-            TicketsView()
-                .tabItem {
-                    Image(systemName: "bed.double.fill")
-                    Text("Отели")
-                }
-            TicketsView()
-                .tabItem {
-                    Image(systemName: "mappin")
-                    Text("Короче")
-                }
-            TicketsView()
-                .tabItem {
-                    Image(systemName: "bell.fill")
-                    Text("Подписки")
-                }
-            TicketsView()
-                .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Профиль")
-                }
+//            TicketsView()
+//                .tabItem {
+//                    Image(systemName: "airplane")
+//                    Text("Авиабилеты")
+//                }
+//            TicketsView()
+//                .tabItem {
+//                    Image(systemName: "bed.double.fill")
+//                    Text("Отели")
+//                }
+//            TicketsView()
+//                .tabItem {
+//                    Image(systemName: "mappin")
+//                    Text("Короче")
+//                }
+//            TicketsView()
+//                .tabItem {
+//                    Image(systemName: "bell.fill")
+//                    Text("Подписки")
+//                }
+//            TicketsView()
+//                .tabItem {
+//                    Image(systemName: "person.fill")
+//                    Text("Профиль")
+//                }
         }
-        .environment(\.colorScheme, .dark)
     }
 }
 
@@ -57,7 +56,7 @@ struct SearchDestinationView: View {
                         Text("Минск")
                             .font(.system(size: 16, weight: .semibold))
                             .foregroundStyle(.white)
-                        RoundedRectangle(cornerRadius: 1)
+                        Rectangle()
                             .frame(height: 1)
                             .foregroundStyle(Color(uiColor: UIColor(red: 0.86, green: 0.86, blue: 0.86, alpha: 0.6235)))
                         Text("Куда - Турция")
@@ -121,35 +120,35 @@ struct DestinationCollectionView: View {
     }
 }
 
-struct TicketsView: View {
-    var body: some View {
-        VStack {
-            Text("Поиск дешевых авиабилетов")
-                .font(.system(size: 22, weight: .semibold))
-                .padding(.top, 26)
-                .padding(.horizontal, 90)
-                .multilineTextAlignment(.center)
-            SearchDestinationView()
-                .padding(.top, 38)
-                .padding(.horizontal, 16)
-            Text("Музыкально отлететь")
-                .font(.system(size: 22, weight: .semibold))
-                .padding(.top, 32)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 16)
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 67) {
-                    ForEach(Destination.mockArray) { destination in
-                        DestinationCollectionView(destination: destination)
-                    }
-                }
-            }
-            .padding(.top, 10)
-            .contentMargins(16, for: .scrollContent)
-            Spacer()
-        }
-    }
-}
+//struct TicketsView: View {
+//    var body: some View {
+//        VStack {
+//            Text("Поиск дешевых авиабилетов")
+//                .font(.system(size: 22, weight: .semibold))
+//                .padding(.top, 26)
+//                .padding(.horizontal, 90)
+//                .multilineTextAlignment(.center)
+//            SearchDestinationView()
+//                .padding(.top, 38)
+//                .padding(.horizontal, 16)
+//            Text("Музыкально отлететь")
+//                .font(.system(size: 22, weight: .semibold))
+//                .padding(.top, 32)
+//                .frame(maxWidth: .infinity, alignment: .leading)
+//                .padding(.leading, 16)
+//            ScrollView(.horizontal, showsIndicators: false) {
+//                HStack(spacing: 67) {
+//                    ForEach(Destination.mockArray) { destination in
+//                        DestinationCollectionView(destination: destination)
+//                    }
+//                }
+//            }
+//            .padding(.top, 10)
+//            .contentMargins(16, for: .scrollContent)
+//            Spacer()
+//        }
+//    }
+//}
 
 #Preview {
     ContentView()

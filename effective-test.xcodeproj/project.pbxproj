@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		830684A42C11B4FA00AF341D /* SearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830684A32C11B4FA00AF341D /* SearchResultsView.swift */; };
+		831A6FBA2C120D62001420D4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A6FB92C120D62001420D4 /* MainTabView.swift */; };
+		831A6FBD2C120D85001420D4 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A6FBC2C120D85001420D4 /* EmptyView.swift */; };
+		831A6FC02C120DFA001420D4 /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A6FBF2C120DFA001420D4 /* TicketsView.swift */; };
+		831A6FC22C120E40001420D4 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A6FC12C120E40001420D4 /* SearchBarView.swift */; };
+		831A6FC42C121817001420D4 /* MusicDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A6FC32C121817001420D4 /* MusicDestinationView.swift */; };
+		831A6FC62C12182F001420D4 /* MusicDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A6FC52C12182F001420D4 /* MusicDestination.swift */; };
+		831A6FC82C121B04001420D4 /* TicketsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A6FC72C121B04001420D4 /* TicketsViewModel.swift */; };
+		831A6FCB2C121F3D001420D4 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A6FCA2C121F3D001420D4 /* SearchView.swift */; };
+		831A6FCD2C1223B6001420D4 /* SearchButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A6FCC2C1223B6001420D4 /* SearchButtonView.swift */; };
+		831A6FCF2C1226E2001420D4 /* PopularDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A6FCE2C1226E2001420D4 /* PopularDestinationView.swift */; };
+		831A6FD12C123A6A001420D4 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A6FD02C123A6A001420D4 /* SearchViewModel.swift */; };
+		834F9D892C118E1D00086673 /* SearchView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F9D882C118E1D00086673 /* SearchView1.swift */; };
 		83A258792C11199E0034336B /* effective_testApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A258782C11199E0034336B /* effective_testApp.swift */; };
 		83A2587B2C11199E0034336B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2587A2C11199E0034336B /* ContentView.swift */; };
 		83A2587D2C11199F0034336B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A2587C2C11199F0034336B /* Assets.xcassets */; };
@@ -14,6 +27,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		830684A32C11B4FA00AF341D /* SearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsView.swift; sourceTree = "<group>"; };
+		831A6FB92C120D62001420D4 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		831A6FBC2C120D85001420D4 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		831A6FBF2C120DFA001420D4 /* TicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsView.swift; sourceTree = "<group>"; };
+		831A6FC12C120E40001420D4 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		831A6FC32C121817001420D4 /* MusicDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDestinationView.swift; sourceTree = "<group>"; };
+		831A6FC52C12182F001420D4 /* MusicDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicDestination.swift; sourceTree = "<group>"; };
+		831A6FC72C121B04001420D4 /* TicketsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsViewModel.swift; sourceTree = "<group>"; };
+		831A6FCA2C121F3D001420D4 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		831A6FCC2C1223B6001420D4 /* SearchButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButtonView.swift; sourceTree = "<group>"; };
+		831A6FCE2C1226E2001420D4 /* PopularDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDestinationView.swift; sourceTree = "<group>"; };
+		831A6FD02C123A6A001420D4 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		834F9D882C118E1D00086673 /* SearchView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView1.swift; sourceTree = "<group>"; };
+		834F9D8A2C118F2100086673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		83A258752C11199E0034336B /* effective-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "effective-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A258782C11199E0034336B /* effective_testApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = effective_testApp.swift; sourceTree = "<group>"; };
 		83A2587A2C11199E0034336B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +59,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		831A6FB32C120C46001420D4 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				831A6FBB2C120D80001420D4 /* Views */,
+				831A6FB42C120C48001420D4 /* Modules */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		831A6FB42C120C48001420D4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				831A6FC92C121F33001420D4 /* SearchView */,
+				831A6FBE2C120DEB001420D4 /* TicketsView */,
+				831A6FB62C120CFD001420D4 /* TabView */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		831A6FB62C120CFD001420D4 /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				831A6FB92C120D62001420D4 /* MainTabView.swift */,
+			);
+			path = TabView;
+			sourceTree = "<group>";
+		};
+		831A6FBB2C120D80001420D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				831A6FBC2C120D85001420D4 /* EmptyView.swift */,
+				831A6FC12C120E40001420D4 /* SearchBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		831A6FBE2C120DEB001420D4 /* TicketsView */ = {
+			isa = PBXGroup;
+			children = (
+				831A6FBF2C120DFA001420D4 /* TicketsView.swift */,
+				831A6FC32C121817001420D4 /* MusicDestinationView.swift */,
+				831A6FC52C12182F001420D4 /* MusicDestination.swift */,
+				831A6FC72C121B04001420D4 /* TicketsViewModel.swift */,
+			);
+			path = TicketsView;
+			sourceTree = "<group>";
+		};
+		831A6FC92C121F33001420D4 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				831A6FCA2C121F3D001420D4 /* SearchView.swift */,
+				831A6FCC2C1223B6001420D4 /* SearchButtonView.swift */,
+				831A6FCE2C1226E2001420D4 /* PopularDestinationView.swift */,
+				831A6FD02C123A6A001420D4 /* SearchViewModel.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
 		83A2586C2C11199D0034336B = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +136,12 @@
 		83A258772C11199E0034336B /* effective-test */ = {
 			isa = PBXGroup;
 			children = (
+				831A6FB32C120C46001420D4 /* UI */,
+				834F9D8A2C118F2100086673 /* Info.plist */,
 				83A258782C11199E0034336B /* effective_testApp.swift */,
 				83A2587A2C11199E0034336B /* ContentView.swift */,
+				834F9D882C118E1D00086673 /* SearchView1.swift */,
+				830684A32C11B4FA00AF341D /* SearchResultsView.swift */,
 				83A2587C2C11199F0034336B /* Assets.xcassets */,
 				83A2587E2C11199F0034336B /* Preview Content */,
 			);
@@ -137,8 +226,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				831A6FC82C121B04001420D4 /* TicketsViewModel.swift in Sources */,
 				83A2587B2C11199E0034336B /* ContentView.swift in Sources */,
+				831A6FC22C120E40001420D4 /* SearchBarView.swift in Sources */,
+				830684A42C11B4FA00AF341D /* SearchResultsView.swift in Sources */,
+				831A6FCB2C121F3D001420D4 /* SearchView.swift in Sources */,
+				831A6FC62C12182F001420D4 /* MusicDestination.swift in Sources */,
+				831A6FD12C123A6A001420D4 /* SearchViewModel.swift in Sources */,
+				834F9D892C118E1D00086673 /* SearchView1.swift in Sources */,
+				831A6FCD2C1223B6001420D4 /* SearchButtonView.swift in Sources */,
+				831A6FBA2C120D62001420D4 /* MainTabView.swift in Sources */,
+				831A6FBD2C120D85001420D4 /* EmptyView.swift in Sources */,
+				831A6FC02C120DFA001420D4 /* TicketsView.swift in Sources */,
 				83A258792C11199E0034336B /* effective_testApp.swift in Sources */,
+				831A6FC42C121817001420D4 /* MusicDestinationView.swift in Sources */,
+				831A6FCF2C1226E2001420D4 /* PopularDestinationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,11 +377,13 @@
 				DEVELOPMENT_TEAM = 3SYA5J8W7U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "effective-test/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +408,13 @@
 				DEVELOPMENT_TEAM = 3SYA5J8W7U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "effective-test/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
