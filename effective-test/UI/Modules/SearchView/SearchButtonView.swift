@@ -20,26 +20,26 @@ enum SearchButton: Identifiable, CaseIterable {
     var backgroundColor: Color {
         return switch self {
             case .difficultTrip:
-                Color("SpecialGreen", bundle: .main)
+                .specialGreen
             case .anywhere:
-                Color("AnywhereColor", bundle: .main)
+                .anywhere
             case .weekends:
-                Color("Weekends", bundle: .main)
+                .weekends
             case .hotTickets:
-                Color("HotTickets", bundle: .main)
+                .hotTickets
         }
     }
     
     var image: Image {
         return switch self {
             case .difficultTrip:
-                Image("DifficultTrip", bundle: .main)
+                Image(.difficultTrip)
             case .anywhere:
-                Image("Anywhere", bundle: .main)
+                Image(.anywhere)
             case .weekends:
-                Image("Weekends", bundle: .main)
+                Image(.weekends)
             case .hotTickets:
-                Image("HotTickets", bundle: .main)
+                Image(.hotTickets)
         }
     }
     

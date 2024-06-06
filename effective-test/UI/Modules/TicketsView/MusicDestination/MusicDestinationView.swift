@@ -22,17 +22,13 @@ struct MusicDestinationView: View {
                 .font(.system(size: 14))
                 .padding(.top, 8)
             HStack {
-                Image("Airplane", bundle: .main)
+                Image(.airplane)
                     .frame(width: 24, height: 24)
-                    .foregroundStyle(Color("SecondaryText", bundle: .main))
+                    .foregroundStyle(.secondaryText)
                 Text("от \(destination.price) ₽")
                     .font(.system(size: 14))
             }
         }
         .frame(width: 132)
     }
-}
-
-#Preview {
-    MusicDestinationView(destination: .mock)
 }

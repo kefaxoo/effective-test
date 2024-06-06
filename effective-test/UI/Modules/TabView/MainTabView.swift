@@ -12,7 +12,7 @@ struct MainTabView: View {
         TabView {
             TicketsView(viewModel: TicketsViewModel())
                 .tabItem {
-                    Image("Airplane", bundle: .main)
+                    Image(.airplane)
                     Text("Авиабилеты")
                 }
         }

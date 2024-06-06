@@ -7,38 +7,6 @@
 
 import SwiftUI
 
-enum PopularDestination: Identifiable, CaseIterable {
-    var id: String {
-        return UUID().uuidString
-    }
-    
-    case istanbul
-    case sochi
-    case phuket
-    
-    var image: Image {
-        return switch self {
-            case .istanbul:
-                Image("Istanbul", bundle: .main)
-            case .sochi:
-                Image("Sochi", bundle: .main)
-            case .phuket:
-                Image("Phuket", bundle: .main)
-        }
-    }
-    
-    var name: String {
-        return switch self {
-            case .istanbul:
-                "Стамбул"
-            case .sochi:
-                "Сочи"
-            case .phuket:
-                "Пхукет"
-        }
-    }
-}
-
 struct PopularDestinationView: View {
     let type: PopularDestination
     
@@ -52,7 +20,7 @@ struct PopularDestinationView: View {
                 Spacer()
                 Text("Популярное направление")
                     .font(.system(size: 14))
-                    .foregroundStyle(Color("Dismiss", bundle: .main))
+                    .foregroundStyle(.dismiss)
             }
             .frame(height: 40)
             .padding(.leading, 8)

@@ -12,12 +12,12 @@ struct SearchView: View {
     
     var body: some View {
         ZStack {
-            Color("SearchBackgroundColor", bundle: .main)
+            Color.searchBackground
                 .ignoresSafeArea()
             VStack {
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 38, height: 5)
-                    .foregroundColor(Color("Dismiss", bundle: .main))
+                    .foregroundColor(.dismiss)
                     .padding(.top, 16)
                     .onTapGesture {
                         viewModel.isSearchShow = false
@@ -30,6 +30,13 @@ struct SearchView: View {
                     ForEach(SearchButton.allCases) { type in
                         SearchButtonView(type: type)
                             .frame(maxWidth: .infinity)
+                            .onTapGesture {
+                                if type == .anywhere {
+                                    
+                                } else {
+                                    self.viewModel.isSearchShow = false
+                                }
+                            }
                     }
                 }
                 .frame(maxHeight: 110)
@@ -37,7 +44,7 @@ struct SearchView: View {
                 .padding(.horizontal, 16)
                 ZStack {
                     RoundedRectangle(cornerRadius: 16)
-                        .foregroundStyle(Color("GreySearchBar", bundle: .main))
+                        .foregroundStyle(.greySearchBar)
                     VStack(alignment: .leading) {
                         ForEach(PopularDestination.allCases) { type in
                             PopularDestinationView(type: type)
@@ -47,7 +54,7 @@ struct SearchView: View {
                             Rectangle()
                                 .frame(height: 1)
                                 .padding(.horizontal, 16)
-                                .foregroundStyle(Color("Dismiss", bundle: .main))
+                                .foregroundStyle(.dismiss)
                         }
                     }
                     .padding(.vertical, 16)

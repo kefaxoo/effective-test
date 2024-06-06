@@ -20,11 +20,13 @@ final class TicketsViewModel: ObservableObject {
     
     @Published var toPlace = ""
     
+    @Published var shouldPushResults = false
+    
     func fetchMusicDestinations() {
         guard let url = URL(string: "https://run.mocky.io/v3/214a1713-bac0-4853-907c-a1dfc3cd05fd") else { return }
         
         let urlRequest = URLRequest(url: url)
-        URLSession.shared.dataTask(with: urlRequest) { [weak self] data, response, error in
+        URLSession.shared.dataTask(with: urlRequest) { [weak self] data, _, _ in
             guard let data,
                   let offers = try? JSONDecoder().decode(MusicDestinationOffers.self, from: data)
             else {

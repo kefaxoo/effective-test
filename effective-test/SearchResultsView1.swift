@@ -113,94 +113,90 @@ enum Filters: Identifiable {
     }
 }
 
-struct FilterView: View {
-    let filter: Filters
-    
-    var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 50)
-                .foregroundStyle(Color(uiColor: UIColor(red: 0.18, green: 0.19, blue: 0.21, alpha: 1)))
-            HStack(spacing: 8) {
-                if let image = filter.image {
-                    image
-                        .frame(width: 16, height: 16)
-                }
-                filter.title.font(.system(size: 14, weight: .medium)).italic()
-            }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 8.5)
-        }
-        .frame(height: 33)
-    }
-}
+//struct FilterView: View {
+//    let filter: Filters
+//    
+//    var body: some View {
+//        ZStack {
+//            RoundedRectangle(cornerRadius: 50)
+//                .foregroundStyle(Color(uiColor: UIColor(red: 0.18, green: 0.19, blue: 0.21, alpha: 1)))
+//            HStack(spacing: 8) {
+//                if let image = filter.image {
+//                    image
+//                        .frame(width: 16, height: 16)
+//                }
+//                filter.title.font(.system(size: 14, weight: .medium)).italic()
+//            }
+//            .padding(.horizontal, 10)
+//            .padding(.vertical, 8.5)
+//        }
+//        .frame(height: 33)
+//    }
+//}
 
-struct SearchResultsView: View {
-    @State private var subscriptionOnPrice = false
-    
-    var body: some View {
-        VStack {
-            SearchResultsBarView()
-                .padding(.top, 47)
-                .padding(.horizontal, 16)
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 8) {
-                    ForEach(Filters.allCases) { filter in
-                        FilterView(filter: filter)
-                    }
-                }
-            }
-            .contentMargins(16, for: .scrollContent)
-            ZStack {
-                RoundedRectangle(cornerRadius: 16)
-                    .foregroundStyle(Color(uiColor: UIColor(red: 0.11, green: 0.12, blue: 0.13, alpha: 1)))
-                VStack(alignment: .leading) {
-                    Text("Прямые рейсы")
-                        .font(.system(size: 20, weight: .semibold))
-                        .multilineTextAlignment(.leading)
-                        .padding(.top, 16)
-                        .padding(.leading, 16)
-                    Spacer()
-                    
-                }
-            }
-            .padding(.horizontal, 16)
-            .padding(.bottom, 18)
-            Spacer()
-            ZStack {
-                RoundedRectangle(cornerRadius: 8)
-                    .foregroundStyle(Color(uiColor: UIColor(red: 0.13, green: 0.38, blue: 0.74, alpha: 1)))
-                Text("Посмотреть все билеты")
-                    .font(.system(size: 16, weight: .semibold))
-                    .italic()
-            }
-            .frame(height: 42)
-            .padding(.horizontal, 16)
-            .padding(.bottom, 24)
-            ZStack {
-                RoundedRectangle(cornerRadius: 8)
-                    .frame(height: 51)
-                    .foregroundStyle(Color(uiColor: UIColor(red: 0.14, green: 0.15, blue: 0.16, alpha: 1)))
-                HStack {
-                    Image(systemName: "bell.fill")
-                        .frame(width: 24, height: 24)
-                        .foregroundStyle(Color(uiColor: UIColor(red: 0.13, green: 0.38, blue: 0.74, alpha: 1)))
-                    Text("Подписка на цену")
-                        .padding(.leading, 8)
-                        .font(.system(size: 16))
-                    Spacer()
-                    Toggle(isOn: $subscriptionOnPrice) {
-                        Text("")
-                    }
-                }
-                .padding(.horizontal, 16)
-                .padding(.vertical, 14)
-            }
-            .padding(.horizontal, 16)
-            .padding(.bottom, 39)
-        }
-    }
-}
-
-#Preview {
-    SearchResultsView()
-}
+//struct SearchResultsView: View {
+//    @State private var subscriptionOnPrice = false
+//    
+//    var body: some View {
+//        VStack {
+//            SearchResultsBarView()
+//                .padding(.top, 47)
+//                .padding(.horizontal, 16)
+//            ScrollView(.horizontal, showsIndicators: false) {
+//                HStack(spacing: 8) {
+//                    ForEach(Filters.allCases) { filter in
+//                        FilterView(filter: filter)
+//                    }
+//                }
+//            }
+//            .contentMargins(16, for: .scrollContent)
+//            ZStack {
+//                RoundedRectangle(cornerRadius: 16)
+//                    .foregroundStyle(Color(uiColor: UIColor(red: 0.11, green: 0.12, blue: 0.13, alpha: 1)))
+//                VStack(alignment: .leading) {
+//                    Text("Прямые рейсы")
+//                        .font(.system(size: 20, weight: .semibold))
+//                        .multilineTextAlignment(.leading)
+//                        .padding(.top, 16)
+//                        .padding(.leading, 16)
+//                    Spacer()
+//                    
+//                }
+//            }
+//            .padding(.horizontal, 16)
+//            .padding(.bottom, 18)
+//            Spacer()
+//            ZStack {
+//                RoundedRectangle(cornerRadius: 8)
+//                    .foregroundStyle(Color(uiColor: UIColor(red: 0.13, green: 0.38, blue: 0.74, alpha: 1)))
+//                Text("Посмотреть все билеты")
+//                    .font(.system(size: 16, weight: .semibold))
+//                    .italic()
+//            }
+//            .frame(height: 42)
+//            .padding(.horizontal, 16)
+//            .padding(.bottom, 24)
+//            ZStack {
+//                RoundedRectangle(cornerRadius: 8)
+//                    .frame(height: 51)
+//                    .foregroundStyle(Color(uiColor: UIColor(red: 0.14, green: 0.15, blue: 0.16, alpha: 1)))
+//                HStack {
+//                    Image(systemName: "bell.fill")
+//                        .frame(width: 24, height: 24)
+//                        .foregroundStyle(Color(uiColor: UIColor(red: 0.13, green: 0.38, blue: 0.74, alpha: 1)))
+//                    Text("Подписка на цену")
+//                        .padding(.leading, 8)
+//                        .font(.system(size: 16))
+//                    Spacer()
+//                    Toggle(isOn: $subscriptionOnPrice) {
+//                        Text("")
+//                    }
+//                }
+//                .padding(.horizontal, 16)
+//                .padding(.vertical, 14)
+//            }
+//            .padding(.horizontal, 16)
+//            .padding(.bottom, 39)
+//        }
+//    }
+//}
