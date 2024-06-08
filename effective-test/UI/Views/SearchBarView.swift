@@ -32,7 +32,7 @@ enum SearchBarState {
             case .search:
                 Image(.airplane2)
             case .searchResults:
-                Image(.airplane2)
+                Image(.arrowLeft)
         }
     }
     
@@ -137,11 +137,20 @@ struct SearchBarView: View {
             }
             HStack {
                 if !self.state.isTwoImages {
-                    state.leadingImage
-                        .frame(width: 24, height: 24)
-                        .onTapGesture {
-                            self.backDidTap?()
-                        }
+                    if self.state == .searchResults {
+                        state.leadingImage
+                            .frame(width: 24, height: 24)
+                            .foregroundStyle(.white)
+                            .onTapGesture {
+                                self.backDidTap?()
+                            }
+                    } else {
+                        state.leadingImage
+                            .frame(width: 24, height: 24)
+                            .onTapGesture {
+                                self.backDidTap?()
+                            }
+                    }
                 }
                 VStack(alignment: .leading) {
                     if self.state.isText {

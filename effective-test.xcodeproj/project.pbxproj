@@ -28,6 +28,10 @@
 		831A6FE52C126856001420D4 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A6FE42C126856001420D4 /* Price.swift */; };
 		831A6FE72C126F93001420D4 /* TicketOffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831A6FE62C126F93001420D4 /* TicketOffersView.swift */; };
 		834F9D892C118E1D00086673 /* SearchView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834F9D882C118E1D00086673 /* SearchView1.swift */; };
+		8389FFB22C14F3B1002BF85E /* SearchAllResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389FFB12C14F3B1002BF85E /* SearchAllResultsView.swift */; };
+		8389FFB42C14F5CB002BF85E /* SearchResultTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389FFB32C14F5CB002BF85E /* SearchResultTicketView.swift */; };
+		8389FFB72C1510AB002BF85E /* Tickets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389FFB62C1510AB002BF85E /* Tickets.swift */; };
+		8389FFB92C1518B2002BF85E /* SearchAllResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8389FFB82C1518B2002BF85E /* SearchAllResultsViewModel.swift */; };
 		83A258792C11199E0034336B /* effective_testApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A258782C11199E0034336B /* effective_testApp.swift */; };
 		83A2587B2C11199E0034336B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A2587A2C11199E0034336B /* ContentView.swift */; };
 		83A2587D2C11199F0034336B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83A2587C2C11199F0034336B /* Assets.xcassets */; };
@@ -57,6 +61,10 @@
 		831A6FE62C126F93001420D4 /* TicketOffersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketOffersView.swift; sourceTree = "<group>"; };
 		834F9D882C118E1D00086673 /* SearchView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView1.swift; sourceTree = "<group>"; };
 		834F9D8A2C118F2100086673 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8389FFB12C14F3B1002BF85E /* SearchAllResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAllResultsView.swift; sourceTree = "<group>"; };
+		8389FFB32C14F5CB002BF85E /* SearchResultTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTicketView.swift; sourceTree = "<group>"; };
+		8389FFB62C1510AB002BF85E /* Tickets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tickets.swift; sourceTree = "<group>"; };
+		8389FFB82C1518B2002BF85E /* SearchAllResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAllResultsViewModel.swift; sourceTree = "<group>"; };
 		83A258752C11199E0034336B /* effective-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "effective-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A258782C11199E0034336B /* effective_testApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = effective_testApp.swift; sourceTree = "<group>"; };
 		83A2587A2C11199E0034336B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +95,7 @@
 		831A6FB42C120C48001420D4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8389FFB02C14F3A2002BF85E /* SearchAllResultsView */,
 				831A6FD22C1250F2001420D4 /* SearchResultsView */,
 				831A6FC92C121F33001420D4 /* SearchView */,
 				831A6FBE2C120DEB001420D4 /* TicketsView */,
@@ -186,6 +195,17 @@
 				831A6FE42C126856001420D4 /* Price.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8389FFB02C14F3A2002BF85E /* SearchAllResultsView */ = {
+			isa = PBXGroup;
+			children = (
+				8389FFB62C1510AB002BF85E /* Tickets.swift */,
+				8389FFB12C14F3B1002BF85E /* SearchAllResultsView.swift */,
+				8389FFB32C14F5CB002BF85E /* SearchResultTicketView.swift */,
+				8389FFB82C1518B2002BF85E /* SearchAllResultsViewModel.swift */,
+			);
+			path = SearchAllResultsView;
 			sourceTree = "<group>";
 		};
 		83A2586C2C11199D0034336B = {
@@ -299,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				831A6FC82C121B04001420D4 /* TicketsViewModel.swift in Sources */,
+				8389FFB72C1510AB002BF85E /* Tickets.swift in Sources */,
 				83A2587B2C11199E0034336B /* ContentView.swift in Sources */,
 				831A6FE72C126F93001420D4 /* TicketOffersView.swift in Sources */,
 				831A6FC22C120E40001420D4 /* SearchBarView.swift in Sources */,
@@ -307,6 +328,8 @@
 				831A6FD42C1250FD001420D4 /* SearchResultsView.swift in Sources */,
 				831A6FC62C12182F001420D4 /* MusicDestination.swift in Sources */,
 				831A6FD12C123A6A001420D4 /* SearchViewModel.swift in Sources */,
+				8389FFB22C14F3B1002BF85E /* SearchAllResultsView.swift in Sources */,
+				8389FFB42C14F5CB002BF85E /* SearchResultTicketView.swift in Sources */,
 				831A6FDF2C126291001420D4 /* FilterView.swift in Sources */,
 				831A6FD82C125F5B001420D4 /* PopularDestination.swift in Sources */,
 				834F9D892C118E1D00086673 /* SearchView1.swift in Sources */,
@@ -316,6 +339,7 @@
 				831A6FDD2C125F95001420D4 /* Filter.swift in Sources */,
 				831A6FC02C120DFA001420D4 /* TicketsView.swift in Sources */,
 				83A258792C11199E0034336B /* effective_testApp.swift in Sources */,
+				8389FFB92C1518B2002BF85E /* SearchAllResultsViewModel.swift in Sources */,
 				831A6FC42C121817001420D4 /* MusicDestinationView.swift in Sources */,
 				831A6FCF2C1226E2001420D4 /* PopularDestinationView.swift in Sources */,
 				831A6FE52C126856001420D4 /* Price.swift in Sources */,

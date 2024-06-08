@@ -30,50 +30,61 @@ struct SearchResultsView: View {
             .frame(height: 33)
             .padding(.vertical, 15)
             if !self.viewModel.ticketsOffers.isEmpty {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 16)
-                        .foregroundStyle(.directFlights)
+                ScrollView(.vertical) {
                     VStack {
-                        Text("Прямые рейсы")
-                            .font(.system(size: 20, weight: .semibold))
-                            .frame(maxWidth: .infinity, maxHeight: 42, alignment: .leading)
-                            .padding(.top, 16)
-                            .padding(.horizontal, 16)
-                        ForEach(Array(self.viewModel.ticketsOffers.enumerated()), id: \.offset) { index, ticketOffer in
-                            TicketOffersView(index: index, ticketOffer: ticketOffer)
-                            Rectangle()
-                                .foregroundStyle(.separatorCustom)
-                                .frame(height: 1)
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 16)
+                                .foregroundStyle(.directFlights)
+                            VStack {
+                                Text("Прямые рейсы")
+                                    .font(.system(size: 20, weight: .semibold))
+                                    .frame(maxWidth: .infinity, maxHeight: 42, alignment: .leading)
+                                    .padding(.top, 16)
+                                    .padding(.horizontal, 16)
+                                ForEach(Array(self.viewModel.ticketsOffers.enumerated()), id: \.offset) { index, ticketOffer in
+                                    TicketOffersView(index: index, ticketOffer: ticketOffer)
+                                    Rectangle()
+                                        .foregroundStyle(.separatorCustom)
+                                        .frame(height: 1)
+                                }
+                                .padding(.horizontal, 16)
+                                Text("Показать все")
+                                    .foregroundStyle(.anywhere)
+                                    .font(.system(size: 16, weight: .semibold))
+                                    .multilineTextAlignment(.center)
+                                    .padding(.horizontal, 16)
+                                    .padding(.bottom, 16)
+                                    .padding(.top, 19)
+                            }
                         }
+                        .frame(maxHeight: 288)
+                        .padding(.top, 15)
                         .padding(.horizontal, 16)
-                        Text("Показать все")
-                            .foregroundStyle(.anywhere)
-                            .font(.system(size: 16, weight: .semibold))
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, 16)
-                            .padding(.bottom, 16)
-                            .padding(.top, 19)
+                        NavigationLink {
+                            SearchAllResultsView(viewModel: SearchAllResultsViewModel(departTown: self.viewModel.fromPlace, arriveTown: self.viewModel.toPlace))
+                                .navigationBarBackButtonHidden(true)
+                        } label: {
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 8)
+                                    .foregroundStyle(.anywhere)
+                                Text("Посмотреть все билеты")
+                                    .foregroundStyle(.white)
+                                    .font(.system(size: 16, weight: .semibold))
+                                    .italic()
+                            }
+                        }
+                        .frame(height: 42)
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 39)
+                        .padding(.top, 18)
                     }
                 }
-                .frame(maxHeight: 288)
-                .padding(.top, 15)
-                .padding(.horizontal, 16)
             } else if self.viewModel.shouldShowProgressView {
                 Spacer()
                 ProgressView()
                     .controlSize(.extraLarge)
             }
             Spacer()
-            ZStack {
-                RoundedRectangle(cornerRadius: 8)
-                    .foregroundStyle(.anywhere)
-                Text("Посмотреть все билеты")
-                    .font(.system(size: 16, weight: .semibold))
-                    .italic()
-            }
-            .frame(height: 42)
-            .padding(.horizontal, 16)
-            .padding(.bottom, 39)
         }
         .onAppear {
             self.viewModel.fetchTrips()
