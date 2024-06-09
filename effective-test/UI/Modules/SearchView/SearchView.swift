@@ -34,9 +34,9 @@ struct SearchView: View {
                             .onTapGesture {
                                 if type == .anywhere {
                                     self.viewModel.toPlace = type.text
-                                } else {
-                                    dismiss()
                                 }
+                                
+                                dismiss()
                             }
                     }
                 }
@@ -50,7 +50,8 @@ struct SearchView: View {
                         ForEach(PopularDestination.allCases) { type in
                             PopularDestinationView(type: type)
                                 .onTapGesture {
-                                    
+                                    self.viewModel.toPlace = type.name
+                                    dismiss()
                                 }
                             Rectangle()
                                 .frame(height: 1)

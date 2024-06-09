@@ -117,6 +117,18 @@ extension Character {
     }
 }
 
+extension Binding {
+    func onChange(_ handler: @escaping (Value) -> Void) -> Binding<Value> {
+        Binding(
+            get: { self.wrappedValue },
+            set: { newValue in
+                self.wrappedValue = newValue
+                handler(newValue)
+            }
+        )
+    }
+}
+
 struct SearchBarView: View {
     let state: SearchBarState
     
@@ -212,6 +224,16 @@ struct SearchBarView: View {
             .padding(.leading, self.state.leadingPadding)
             .padding(.trailing, 16)
             .padding(.vertical, 16)
+            .onChange(of: fromPlace) {
+                guard !fromPlace.filter({ !$0.isCyrillic }).isEmpty else { return }
+                
+                fromPlace = fromPlace.filter({ $0.isCyrillic })
+            }
+            .onChange(of: toPlace) {
+                guard !toPlace.filter({ !$0.isCyrillic }).isEmpty else { return }
+                
+                toPlace = toPlace.filter({ $0.isCyrillic })
+            }
         }
     }
 }
