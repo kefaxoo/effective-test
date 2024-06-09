@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @StateObject var viewModel: SearchViewModel
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
@@ -20,7 +21,7 @@ struct SearchView: View {
                     .foregroundColor(.dismiss)
                     .padding(.top, 16)
                     .onTapGesture {
-                        viewModel.isSearchShow = false
+                        dismiss()
                     }
                 SearchBarView(state: .search, fromPlace: viewModel.$fromPlace, toPlace: viewModel.$toPlace)
                     .frame(height: 96)
@@ -32,9 +33,9 @@ struct SearchView: View {
                             .frame(maxWidth: .infinity)
                             .onTapGesture {
                                 if type == .anywhere {
-                                    
+                                    self.viewModel.toPlace = type.text
                                 } else {
-                                    self.viewModel.isSearchShow = false
+                                    dismiss()
                                 }
                             }
                     }

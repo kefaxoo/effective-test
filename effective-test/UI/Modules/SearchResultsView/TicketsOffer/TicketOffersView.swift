@@ -12,7 +12,6 @@ struct TicketOffersView: View {
     let ticketOffer: TicketOffer
     
     private var color: Color {
-        print(self.index)
         return switch self.index {
             case 0:
                 .hotTickets

@@ -124,6 +124,7 @@ struct SearchBarView: View {
     @Binding var toPlace: String
     
     var backDidTap: (() -> Void)? = nil
+    var moveDidTap: (() -> Void)? = nil
     
     var body: some View {
         ZStack {
@@ -162,6 +163,9 @@ struct SearchBarView: View {
                             if self.state.isTopTrailingImage {
                                 state.secondLeadingImage
                                     .frame(width: 24, height: 24)
+                                    .onTapGesture {
+                                        self.moveDidTap?()
+                                    }
                             }
                         }
                     } else {

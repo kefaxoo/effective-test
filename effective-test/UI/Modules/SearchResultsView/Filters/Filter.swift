@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-enum Filter: Identifiable, CaseIterable {
+enum Filter: Identifiable {
     case returnDate
-    case fromDate
+    case fromDate(date: Date?)
     case personCountFlightClass
     
     var isImage: Bool {
@@ -33,20 +33,30 @@ enum Filter: Identifiable, CaseIterable {
     }
     
     var text: Text {
-        return switch self {
+        switch self {
             case .returnDate:
-                Text("обратно")
+                return Text("обратно")
                     .foregroundStyle(.white)
-            case .fromDate:
-                Text("24 фев").foregroundStyle(.white) + Text(", сб").foregroundStyle(.secondaryText)
+            case .fromDate(let date):
+                let date = date ?? Date()
+                let dayMonthFormatter = DateFormatter()
+                dayMonthFormatter.dateFormat = "dd MMM"
+                let weekDayFormatter = DateFormatter()
+                weekDayFormatter.dateFormat = "EE"
+                return Text(dayMonthFormatter.string(from: date)).foregroundStyle(.white) + Text(", \(weekDayFormatter.string(from: date).lowercased())").foregroundStyle(.secondaryText)
             case .personCountFlightClass:
-                Text("1, эконом")
+                return Text("1, эконом")
                     .foregroundStyle(.white)
         }
     }
     
     var shouldStrokeText: Bool {
-        return self == .returnDate
+        return switch self {
+            case .returnDate:
+                true
+            default:
+                false
+        }
     }
     
     var id: String {

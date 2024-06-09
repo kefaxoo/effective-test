@@ -15,14 +15,33 @@ struct SearchResultsView: View {
         VStack {
             SearchBarView(state: .searchResults, fromPlace: $viewModel.fromPlace, toPlace: $viewModel.toPlace, backDidTap: {
                 self.presentationModel.wrappedValue.dismiss()
+            }, moveDidTap: {
+                let temp = self.viewModel.fromPlace
+                self.viewModel.fromPlace = self.viewModel.toPlace
+                self.viewModel.toPlace = temp
             })
             .frame(height: 96)
             .padding(.top, 47)
             .padding(.horizontal, 16)
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(Filter.allCases) { filter in
-                        FilterView(filter: filter)
+                    ForEach(self.viewModel.filters) { filter in
+                        switch filter {
+                            case .fromDate:
+                                ZStack {
+                                    FilterView(filter: .fromDate(date: self.viewModel.fromDate))
+                                    DatePicker("", selection: self.$viewModel.fromDate, displayedComponents: [.date])
+                                        .opacity(0.05)
+                                }
+                            case .returnDate:
+                                ZStack {
+                                    FilterView(filter: filter)
+                                    DatePicker("", selection: self.$viewModel.returnDate, displayedComponents: [.date])
+                                        .opacity(0.05)
+                                }
+                            default:
+                                FilterView(filter: filter)
+                        }
                     }
                 }
             }
@@ -48,13 +67,6 @@ struct SearchResultsView: View {
                                         .frame(height: 1)
                                 }
                                 .padding(.horizontal, 16)
-                                Text("Показать все")
-                                    .foregroundStyle(.anywhere)
-                                    .font(.system(size: 16, weight: .semibold))
-                                    .multilineTextAlignment(.center)
-                                    .padding(.horizontal, 16)
-                                    .padding(.bottom, 16)
-                                    .padding(.top, 19)
                             }
                         }
                         .frame(maxHeight: 288)

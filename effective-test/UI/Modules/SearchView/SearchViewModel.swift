@@ -10,11 +10,10 @@ import SwiftUI
 final class SearchViewModel: ObservableObject {
     @Binding var toPlace: String
     @Binding var fromPlace: String
-    @Binding var isSearchShow: Bool
+    @Published var toPlaceFocused: Bool = false
     
-    init(toPlace: Binding<String>, fromPlace: Binding<String>, isSearchShow: Binding<Bool>) {
+    init(toPlace: Binding<String>, fromPlace: Binding<String>) {
         self._toPlace = toPlace
         self._fromPlace = fromPlace
-        self._isSearchShow = isSearchShow
     }
 }

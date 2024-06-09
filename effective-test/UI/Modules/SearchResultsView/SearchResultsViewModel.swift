@@ -14,9 +14,15 @@ final class SearchResultsViewModel: ObservableObject {
     @Published var ticketsOffers = [TicketOffer]()
     @Published var shouldShowProgressView = true
     
+    @Published var filters: [Filter]
+    
+    @Published var fromDate = Date()
+    @Published var returnDate = Date()
+    
     init(toPlace: Binding<String>, fromPlace: Binding<String>) {
         self._toPlace = toPlace
         self._fromPlace = fromPlace
+        self.filters = [.returnDate, .fromDate(date: Date()), .personCountFlightClass]
     }
     
     func fetchTrips() {

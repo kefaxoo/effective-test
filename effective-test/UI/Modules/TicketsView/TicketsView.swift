@@ -66,7 +66,7 @@ struct TicketsView: View {
                     self.viewModel.shouldPushResults = true
                 }
             } content: {
-                SearchView(viewModel: SearchViewModel(toPlace: $viewModel.toPlace, fromPlace: $viewModel.fromPlace, isSearchShow: $viewModel.isSearchShow))
+                SearchView(viewModel: SearchViewModel(toPlace: $viewModel.toPlace, fromPlace: $viewModel.fromPlace))
             }
         }
     }
