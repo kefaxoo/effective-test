@@ -13,7 +13,7 @@ struct SearchResultsView: View {
     
     var body: some View {
         VStack {
-            SearchBarView(state: .searchResults, fromPlace: $viewModel.fromPlace, toPlace: $viewModel.toPlace, backDidTap: {
+            SearchBarView(state: .searchResults, fromPlace: viewModel.$fromPlace, toPlace: viewModel.$toPlace, backDidTap: {
                 self.presentationModel.wrappedValue.dismiss()
             }, moveDidTap: {
                 let temp = self.viewModel.fromPlace
