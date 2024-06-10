@@ -29,15 +29,27 @@ struct SearchResultsView: View {
                         switch filter {
                             case .fromDate:
                                 ZStack {
-                                    FilterView(filter: .fromDate(date: self.viewModel.fromDate))
-                                    DatePicker("", selection: self.$viewModel.fromDate, displayedComponents: [.date])
-                                        .opacity(0.05)
+                                    FilterView(
+                                        filter: .fromDate(
+                                            date: self.viewModel.fromDate
+                                        )
+                                    )
+                                    DatePicker(
+                                        "",
+                                        selection: self.$viewModel.fromDate,
+                                        displayedComponents: [.date]
+                                    )
+                                    .opacity(0.05)
                                 }
                             case .returnDate:
                                 ZStack {
                                     FilterView(filter: filter)
-                                    DatePicker("", selection: self.$viewModel.returnDate, displayedComponents: [.date])
-                                        .opacity(0.05)
+                                    DatePicker(
+                                        "",
+                                        selection: self.$viewModel.returnDate,
+                                        displayedComponents: [.date]
+                                    )
+                                    .opacity(0.05)
                                 }
                             default:
                                 FilterView(filter: filter)
@@ -57,11 +69,21 @@ struct SearchResultsView: View {
                             VStack {
                                 Text("Прямые рейсы")
                                     .font(.system(size: 20, weight: .semibold))
-                                    .frame(maxWidth: .infinity, maxHeight: 42, alignment: .leading)
+                                    .frame(
+                                        maxWidth: .infinity,
+                                        maxHeight: 42,
+                                        alignment: .leading
+                                    )
                                     .padding(.top, 16)
                                     .padding(.horizontal, 16)
-                                ForEach(Array(self.viewModel.ticketsOffers.enumerated()), id: \.offset) { index, ticketOffer in
-                                    TicketOffersView(index: index, ticketOffer: ticketOffer)
+                                ForEach(
+                                    Array(self.viewModel.ticketsOffers.enumerated()),
+                                    id: \.offset
+                                ) { index, ticketOffer in
+                                    TicketOffersView(
+                                        index: index,
+                                        ticketOffer: ticketOffer
+                                    )
                                     Rectangle()
                                         .foregroundStyle(.separatorCustom)
                                         .frame(height: 1)
@@ -73,8 +95,13 @@ struct SearchResultsView: View {
                         .padding(.top, 15)
                         .padding(.horizontal, 16)
                         NavigationLink {
-                            SearchAllResultsView(viewModel: SearchAllResultsViewModel(departTown: self.viewModel.fromPlace, arriveTown: self.viewModel.toPlace))
-                                .navigationBarBackButtonHidden(true)
+                            SearchAllResultsView(
+                                viewModel: SearchAllResultsViewModel(
+                                    departTown: self.viewModel.fromPlace,
+                                    arriveTown: self.viewModel.toPlace
+                                )
+                            )
+                            .navigationBarBackButtonHidden(true)
                         } label: {
                             ZStack {
                                 RoundedRectangle(cornerRadius: 8)
@@ -103,6 +130,3 @@ struct SearchResultsView: View {
         }
     }
 }
-
-
-

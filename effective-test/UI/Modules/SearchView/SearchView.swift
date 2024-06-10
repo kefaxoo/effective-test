@@ -23,10 +23,14 @@ struct SearchView: View {
                     .onTapGesture {
                         dismiss()
                     }
-                SearchBarView(state: .search, fromPlace: viewModel.$fromPlace, toPlace: viewModel.$toPlace)
-                    .frame(height: 96)
-                    .padding(.horizontal, 16)
-                    .padding(.top, 25)
+                SearchBarView(
+                    state: .search,
+                    fromPlace: viewModel.$fromPlace,
+                    toPlace: viewModel.$toPlace
+                )
+                .frame(height: 96)
+                .padding(.horizontal, 16)
+                .padding(.top, 25)
                 HStack {
                     ForEach(SearchButton.allCases) { type in
                         SearchButtonView(type: type)

@@ -26,12 +26,17 @@ final class SearchResultsViewModel: ObservableObject {
     }
     
     func fetchTrips() {
-        guard let url = URL(string: "https://run.mocky.io/v3/7e55bf02-89ff-4847-9eb7-7d83ef884017") else { return }
+        guard let url = URL(
+            string: "https://run.mocky.io/v3/7e55bf02-89ff-4847-9eb7-7d83ef884017"
+        ) else { return }
         
         let urlRequest = URLRequest(url: url)
         URLSession.shared.dataTask(with: urlRequest) { [weak self] data, _, _ in
             guard let data,
-                  let offers = try? JSONDecoder().decode(TicketsOffers.self, from: data)
+                  let offers = try? JSONDecoder().decode(
+                    TicketsOffers.self,
+                    from: data
+                  )
             else {
                 DispatchQueue.main.async {
                     self?.shouldShowProgressView = false

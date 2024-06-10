@@ -21,8 +21,12 @@ struct TicketsView: View {
                 ZStack {
                     RoundedRectangle(cornerRadius: 16)
                         .foregroundStyle(.greySearchBar)
-                    SearchBarView(state: .begin, fromPlace: $viewModel.fromPlace, toPlace: $viewModel.toPlace)
-                        .padding(16)
+                    SearchBarView(
+                        state: .begin,
+                        fromPlace: $viewModel.fromPlace,
+                        toPlace: $viewModel.toPlace
+                    )
+                    .padding(16)
                 }
                 .frame(height: 122)
                 .padding(.horizontal, 16)
@@ -50,7 +54,16 @@ struct TicketsView: View {
                     ProgressView()
                         .controlSize(.extraLarge)
                 }
-                NavigationLink(destination: SearchResultsView(viewModel: SearchResultsViewModel(toPlace: $viewModel.toPlace, fromPlace: $viewModel.fromPlace)).navigationBarBackButtonHidden(true), isActive: $viewModel.shouldPushResults) {
+                NavigationLink(
+                    destination: SearchResultsView(
+                        viewModel: SearchResultsViewModel(
+                            toPlace: $viewModel.toPlace,
+                            fromPlace: $viewModel.fromPlace
+                        )
+                    )
+                    .navigationBarBackButtonHidden(true),
+                    isActive: $viewModel.shouldPushResults
+                ) {
                     EmptyView()
                 }
                 Spacer()
@@ -66,7 +79,12 @@ struct TicketsView: View {
                     self.viewModel.shouldPushResults = true
                 }
             } content: {
-                SearchView(viewModel: SearchViewModel(toPlace: $viewModel.toPlace, fromPlace: $viewModel.fromPlace))
+                SearchView(
+                    viewModel: SearchViewModel(
+                        toPlace: $viewModel.toPlace,
+                        fromPlace: $viewModel.fromPlace
+                    )
+                )
             }
         }
     }

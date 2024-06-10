@@ -15,6 +15,26 @@ struct MainTabView: View {
                     Image(.airplane)
                     Text("Авиабилеты")
                 }
+            EmptyView()
+                .tabItem {
+                    Image(.bed)
+                    Text("Отели")
+                }
+            EmptyView()
+                .tabItem {
+                    Image(.pin)
+                    Text("Короче")
+                }
+            EmptyView()
+                .tabItem {
+                    Image(.ring)
+                    Text("Подписки")
+                }
+            EmptyView()
+                .tabItem {
+                    Image(.personTabBar)
+                    Text("Профиль")
+                }
         }
     }
 }

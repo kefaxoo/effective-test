@@ -21,7 +21,9 @@ final class SearchAllResultsViewModel: ObservableObject {
     }
     
     func fetchTickets() {
-        guard let url = URL(string: "https://run.mocky.io/v3/670c3d56-7f03-4237-9e34-d437a9e56ebf") else {
+        guard let url = URL(
+            string: "https://run.mocky.io/v3/670c3d56-7f03-4237-9e34-d437a9e56ebf"
+        ) else {
             self.shouldShowProgressView = false
             return
         }

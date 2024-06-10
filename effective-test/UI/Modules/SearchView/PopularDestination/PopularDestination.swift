@@ -19,11 +19,11 @@ enum PopularDestination: Identifiable, CaseIterable {
     var image: Image {
         return switch self {
             case .istanbul:
-                Image("Istanbul", bundle: .main)
+                Image(.istanbul)
             case .sochi:
-                Image("Sochi", bundle: .main)
+                Image(.sochi)
             case .phuket:
-                Image("Phuket", bundle: .main)
+                Image(.phuket)
         }
     }
     

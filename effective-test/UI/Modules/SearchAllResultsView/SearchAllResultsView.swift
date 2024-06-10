@@ -25,7 +25,9 @@ struct SearchAllResultsView: View {
                                 self.presentationModel.wrappedValue.dismiss()
                             }
                         VStack(alignment: .leading) {
-                            Text("\(self.viewModel.departTown)-\(self.viewModel.arriveTown)")
+                            Text(
+                                "\(self.viewModel.departTown)-\(self.viewModel.arriveTown)"
+                            )
                                 .font(.system(size: 16, weight: .semibold))
                             Text("23 февраля, 1 пассажир")
                                 .font(.system(size: 15, weight: .medium))

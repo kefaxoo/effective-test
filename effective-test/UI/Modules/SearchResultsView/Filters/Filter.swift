@@ -43,7 +43,10 @@ enum Filter: Identifiable {
                 dayMonthFormatter.dateFormat = "dd MMM"
                 let weekDayFormatter = DateFormatter()
                 weekDayFormatter.dateFormat = "EE"
-                return Text(dayMonthFormatter.string(from: date)).foregroundStyle(.white) + Text(", \(weekDayFormatter.string(from: date).lowercased())").foregroundStyle(.secondaryText)
+                return Text(dayMonthFormatter.string(from: date))
+                    .foregroundStyle(.white)
+                + Text(", \(weekDayFormatter.string(from: date).lowercased())")
+                    .foregroundStyle(.secondaryText)
             case .personCountFlightClass:
                 return Text("1, эконом")
                     .foregroundStyle(.white)
